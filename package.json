@@ -1,0 +1,42 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.28.2",
+        "node-sass": "^4.13.1",
+        "bootstrap": "^4.4.1",
+        "core-js": "^3.6.4",
+        "regenerator-runtime": "^0.13.3",
+        "font-awesome": "^4.7.0",
+        "jquery": "^3.4.1",
+        "webpack-cli": "^3.3.10",
+        "webpack-notifier": "^1.6.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.12.0",
+        "sass-loader": "^7.3.1",
+        "@popperjs/core": "^2.0.3",
+        "add": "^2.0.6",
+        "bootstrap-colorpicker": "3.2.0",
+        "build": "^0.1.4",
+        "chosen-js": "^1.8.7",
+        "colorpicker": "^2.0.0",
+        "components-font-awesome": "^5.9.0",
+        "datatables.net": "^1.10.20",
+        "datatables.net-bs4": "^1.10.20",
+        "datatables.net-fixedcolumns-bs4": "^3.3.0",
+        "datatables.net-fixedheader-bs4": "^3.1.6",
+        "datatables.net-responsive-bs4": "^2.2.3",
+        "jquery-autocomplete": "^1.2.8",
+        "jquery-ui": "^1.12.1",
+        "js-cookie": "^2.2.1",
+        "select2": "^4.0.13",
+        "webpack-jquery-ui": "^2.0.1"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    }
+}

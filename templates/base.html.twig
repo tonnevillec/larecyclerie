@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ 'page.title'|trans }}{% endblock %}</title>
+
+    {{ encore_entry_link_tags('style') }}
+    {{ encore_entry_link_tags('app') }}
+
+    {% block stylesheets %}
+    {% endblock %}
+    <style type="text/css">
+        {% block styleinline %}{% endblock %}
+    </style>
+</head>
+<body class="{% block bodyclass %}bodyBase{% endblock %}">
+    {% include "_header.html.twig" %}
+
+    <div class="wrapper">
+{#        <div id="content" class="container-fluid">#}
+{#            <div id="body" class="p-2">#}
+{#                {% for type, messages in app.session.flashbag.all() %}#}
+{#                    {% for message in messages %}#}
+{#                        <div class="alert alert-{{type}} alert-dismissible fade show" role="alert">#}
+{#                            {{ message }}#}
+{#                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">#}
+{#                                <span aria-hidden="true">&times;</span>#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                {% endfor %}#}
+
+                {% block body %}{% endblock %}
+{#            </div>#}
+{#        </div>#}
+    </div>
+
+    {#    <div class="footer">#}
+    {#        {% include "_footer.html.twig" %}#}
+    {#    </div>#}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
+</html>

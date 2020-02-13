@@ -1,0 +1,17 @@
+$font-size-base: 0.9rem !default;
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+
+// Variables
+@import 'variables';
+
+// Template
+@import 'template';
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@import '~datatables.net-bs4/css/dataTables.bootstrap4.css';
+
+@import '~jquery-ui/themes/base/all.css';
+@import "~chosen-js/chosen.css";
+@import "~select2/dist/css/select2.min.css";

@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block bodyclass %}bodyLogin{% endblock %}
+
+{% block body %}
+{#    <div class="container">#}
+{#        <form method="post">#}
+{#            {% if error %}#}
+{#                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#            {% endif %}#}
+
+{#            {% if app.user %}#}
+{#                <div class="mb-3">#}
+{#                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>#}
+{#                </div>#}
+{#            {% endif %}#}
+
+{#            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+{#            <label for="inputEmail">Email</label>#}
+{#            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>#}
+{#            <label for="inputPassword">Password</label>#}
+{#            <input type="password" name="password" id="inputPassword" class="form-control" required>#}
+
+{#            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">#}
+
+{#            <button class="btn btn-lg btn-primary mt-2" type="submit">#}
+{#                Sign in#}
+{#            </button>#}
+{#        </form>#}
+{#    </div>#}
+
+    <div class="login-reg-panel">
+        <div class="login-info-box">
+            <h2>Have an account?</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            <label id="label-register" for="log-reg-show">{{ 'login'|trans }}</label>
+            <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+        </div>
+
+        <div class="register-info-box">
+            <h2>Don't have an account?</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            <label id="label-login" for="log-login-show">Register</label>
+            <input type="radio" name="active-log-panel" id="log-login-show">
+        </div>
+
+        <div class="white-panel">
+            <div class="login-show">
+                <form method="post">
+                    <h2>{{ 'login'|trans|upper }}</h2>
+                    <input type="email" placeholder="{{ 'users.email.title' | trans }}" value="{{ last_username }}" name="email" id="inputEmail" required autofocus>
+                    <input type="password" placeholder="{{ 'users.password.title' | trans }}" name="password" id="inputPassword" required>
+                    <input type="submit" value="{{ 'login'|trans }}">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <a href="">{{ 'forgot_password'|trans }}?</a>
+                </form>
+            </div>
+            <div class="register-show">
+                <h2>{{ 'register'|trans }}</h2>
+                <input type="email" placeholder="{{ 'users.email.title'|trans }}">
+                <input type="password" placeholder="{{ 'users.password.title'|trans }}">
+                <input type="password" placeholder="Confirm Password">
+                <input type="submit" value="{{ 'register'|trans }}">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+    <script type="application/javascript">
+    $(document).ready(function(){
+        $('.login-info-box').fadeOut();
+        $('.login-show').addClass('show-log-panel');
+    });
+
+
+    $('.login-reg-panel input[type="radio"]').on('change', function() {
+        if($('#log-login-show').is(':checked')) {
+            $('.register-info-box').fadeOut();
+            $('.login-info-box').fadeIn();
+
+            $('.white-panel').addClass('right-log');
+            $('.register-show').addClass('show-log-panel');
+            $('.login-show').removeClass('show-log-panel');
+        }
+        else if($('#log-reg-show').is(':checked')) {
+            $('.register-info-box').fadeIn();
+            $('.login-info-box').fadeOut();
+
+            $('.white-panel').removeClass('right-log');
+
+            $('.login-show').addClass('show-log-panel');
+            $('.register-show').removeClass('show-log-panel');
+        }
+    });
+    </script>
+
+{% endblock %}

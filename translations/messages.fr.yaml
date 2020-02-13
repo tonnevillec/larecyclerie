@@ -1,0 +1,10 @@
+login: 'Connexion'
+logout: 'Déconnexion'
+register: "S'inscrire"
+forgot_password: 'Mot de passe oublié'
+
+users:
+  email:
+    title: 'Adresse mail'
+  password:
+    title: 'Mot de passe'

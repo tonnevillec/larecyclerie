@@ -1,0 +1,20 @@
+{% block navheader %}
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark text-green">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="navbar-brand" href="{{ path('home') }}"><i class="fas fa-leaf"></i> LaRecyclerie</a>
+            </li>
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right my-2 my-lg-0">
+            <li>
+                {% if app.user %}
+                    <a href="{{ path('app_logout') }}" class="btn btn-light btn-sm"><span class="fas fa-home text-danger"></span> {{ 'logout'|trans }}</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}" class="btn btn-light btn-sm bg-success text-white"><span class="fas fa-home"></span> {{ 'login'|trans }}</a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
