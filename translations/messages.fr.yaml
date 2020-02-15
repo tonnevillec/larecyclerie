@@ -8,3 +8,4 @@ users:
     title: 'Adresse mail'
   password:
     title: 'Mot de passe'
+    confirm: 'Confirmer le mot de passe'

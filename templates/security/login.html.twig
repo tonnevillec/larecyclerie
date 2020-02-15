@@ -59,10 +59,30 @@
             </div>
             <div class="register-show">
                 <h2>{{ 'register'|trans }}</h2>
-                <input type="email" placeholder="{{ 'users.email.title'|trans }}">
-                <input type="password" placeholder="{{ 'users.password.title'|trans }}">
-                <input type="password" placeholder="Confirm Password">
-                <input type="submit" value="{{ 'register'|trans }}">
+                {{ form_start(form) }}
+
+                {{ form_widget(form.email) }}
+                {{ form_widget(form.password) }}
+
+                <div class="d-none">
+                    {{ form_row(form.phone, {'attr' : {'class' : 'd-none', 'disabled' : true}}) }}
+                    {{ form_row(form.username, {'attr' : {'class' : 'd-none', 'disabled' : true}}) }}
+                    {{ form_row(form.firstname, {'attr' : {'class' : 'd-none', 'disabled' : true}}) }}
+                    {{ form_row(form.lastname, {'attr' : {'class' : 'd-none', 'disabled' : true}}) }}
+                    {{ form_row(form.gender, {'attr' : {'class' : 'd-none', 'disabled' : true}}) }}
+                    {{ form_row(form.address, {'attr' : {'class' : 'd-none', 'disabled' : true}}) }}
+                    {{ form_row(form.city, {'attr' : {'class' : 'd-none', 'disabled' : true}}) }}
+                    {{ form_row(form.postal_code, {'attr' : {'class' : 'd-none', 'disabled' : true}}) }}
+                </div>
+
+                <input type="password" placeholder="{{ 'users.password.confirm'|trans }}" required>
+                <button type="submit">{{ 'register'|trans }}</button>
+                {{ form_end(form) }}
+
+{#                <input type="email" placeholder="{{ 'users.email.title'|trans }}">#}
+{#                <input type="password" placeholder="{{ 'users.password.title'|trans }}">#}
+{#                <input type="password" placeholder="Confirm Password">#}
+{#                <input type="submit" value="{{ 'register'|trans }}">#}
             </div>
         </div>
     </div>
